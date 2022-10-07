@@ -1,6 +1,6 @@
 package com.connorcode;
 
-import com.connorcode.misc.Common;
+import com.connorcode.misc.Response;
 
 import java.util.Scanner;
 
@@ -11,7 +11,11 @@ class Main {
         while (true) {
             System.out.print("[EGGBOT]> ");
             String text = in.nextLine();
-            System.out.println(Common.diceCoefficient("mango", text));
+            Response res = ChatManager.run(text);
+            switch (res.type) {
+                case BasicText -> System.out.println((String) res.value);
+                case None -> System.out.println("NO RESPONSE");
+            }
         }
     }
 }

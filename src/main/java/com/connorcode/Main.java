@@ -14,6 +14,10 @@ class Main {
             Response res = ChatManager.run(text);
             switch (res.type) {
                 case BasicText -> System.out.println((String) res.value);
+                case Exit -> {
+                    System.out.println((String) res.value);
+                    System.exit(0);
+                }
                 case None -> System.out.println("NO RESPONSE");
             }
         }

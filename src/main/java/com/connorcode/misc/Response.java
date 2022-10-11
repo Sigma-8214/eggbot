@@ -11,6 +11,7 @@ public class Response {
 
     public enum ResponseType {
         None,
-        BasicText
+        BasicText,
+        Exit
     }
 }

@@ -8,16 +8,14 @@ public abstract class BasicComponent implements ChatComponent {
     @Override
     public double scoreText(String input) {
         double out = 0.0;
-        double totalWeight = 0.0;
         List<String> words = List.of(input.split(" "));
 
-        for (KeyWord i : keyWords) totalWeight += i.weight;
 
         for (KeyWord i : keyWords) {
             for (String j : words) {
                 double similarity = Common.diceCoefficient(i.word, j);
                 if (similarity >= 0.80) {
-                    out += i.weight / totalWeight * similarity;
+                    out += i.weight * similarity;
                     break;
                 }
             }

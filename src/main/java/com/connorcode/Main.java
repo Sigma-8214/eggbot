@@ -1,7 +1,11 @@
 package com.connorcode;
 
 import com.connorcode.chat.Response;
+import com.connorcode.state.StateMachine;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 class Main {
@@ -28,7 +32,12 @@ class Main {
                     System.out.println((String) res.value);
                     System.exit(0);
                 }
-                case None -> System.out.println(randomResponses[ChatManager.rng.nextInt(randomResponses.length)]);
+                case None -> {
+                    List<String> rngRes = new ArrayList<>(List.of(randomResponses));
+                    for (StateMachine.Keys i : StateMachine.noInfo()) rngRes.add(StateMachine.Keys.ask(i));
+
+                    System.out.println(rngRes.get(ChatManager.rng.nextInt(rngRes.size())));
+                }
             }
         }
     }

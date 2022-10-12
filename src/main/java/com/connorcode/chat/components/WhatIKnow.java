@@ -24,8 +24,6 @@ public class WhatIKnow extends BasicComponent {
 
     @Override
     public Response process(String input) {
-        System.out.println(StateMachine.state);
-
         // Respond if we know *nothing*
         if (StateMachine.state.isEmpty()) return new Response(Response.ResponseType.BasicText,
                 noneResponses[ChatManager.rng.nextInt(noneResponses.length)]);

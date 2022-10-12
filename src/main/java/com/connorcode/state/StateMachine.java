@@ -56,5 +56,14 @@ public class StateMachine {
                 case NameTitle -> "Your title is " + value;
             };
         }
+
+        public static String ask(Keys key) {
+            return switch (key) {
+                case Name -> "What was your name again?";
+                case FavColor -> "Whats your favorite color?";
+                case FavEgg -> "Whats your favorite way to prepare your eggs";
+                case NameTitle -> "What is your name title?";
+            };
+        }
     }
 }

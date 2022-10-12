@@ -23,7 +23,7 @@ public class Pet extends BasicComponent {
                 new KeyWord("puppy", 0.7),
                 new KeyWord("kitty", 0.7),
                 new KeyWord("frog", 0.7),
-        };
+                };
     }
 
     @Override

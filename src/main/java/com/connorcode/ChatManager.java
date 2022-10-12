@@ -5,7 +5,6 @@ import com.connorcode.components.Exit;
 import com.connorcode.components.Greeting;
 import com.connorcode.components.Pet;
 import com.connorcode.misc.ChatComponent;
-import com.connorcode.misc.Common;
 import com.connorcode.misc.Response;
 
 import java.util.Locale;
@@ -33,7 +32,7 @@ public class ChatManager {
             }
         }
 
-        if (cmp == null)
+        if (cmp == null || maxScore < 0.3)
             return new Response(Response.ResponseType.None, null);
         return cmp.process(input);
     }

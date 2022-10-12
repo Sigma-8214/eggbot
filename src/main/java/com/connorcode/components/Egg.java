@@ -32,7 +32,8 @@ public class Egg implements ChatComponent {
             opportunities.add(i);
         }
 
-        String randomEx = opportunities.get(rng.nextInt(opportunities.size())).replace("ex", "egg");
+        String randomEx = opportunities.get(rng.nextInt(opportunities.size()))
+                .replace("ex", "egg");
         return new Response(Response.ResponseType.BasicText, String.format("You mean %s???", randomEx));
     }
 }

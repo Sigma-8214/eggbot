@@ -38,6 +38,7 @@ public class Greeting extends BasicComponent {
                 new KeyWord("are", 0.2),
                 new KeyWord("you", 0.2),
                 new KeyWord("today", 0.2),
+                new KeyWord("dieggo", 0.3)
         };
     }
 
@@ -45,8 +46,10 @@ public class Greeting extends BasicComponent {
     public Response process(String input) {
         if (input.contains("how") || (input.contains("are") && input.contains("you"))) {
             String res = feelingResponse[ChatManager.rng.nextInt(feelingResponse.length)];
-            return new Response(Response.ResponseType.BasicText, String.format("%s%s", res, ChatManager.rng.nextBoolean() ? "\nWhat about you?" : ""));
+            return new Response(Response.ResponseType.BasicText,
+                    String.format("%s%s", res, ChatManager.rng.nextBoolean() ? "\nWhat about you?" : ""));
         }
-        return new Response(Response.ResponseType.BasicText, greetingResponse[ChatManager.rng.nextInt(greetingResponse.length)]);
+        return new Response(Response.ResponseType.BasicText,
+                greetingResponse[ChatManager.rng.nextInt(greetingResponse.length)]);
     }
 }

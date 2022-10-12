@@ -15,7 +15,7 @@ public class Exit extends BasicComponent {
                 new KeyWord("goodbye", 0.6),
                 new KeyWord("please", 0.2),
 
-        };
+                };
     }
 
     @Override

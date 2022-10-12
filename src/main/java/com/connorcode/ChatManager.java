@@ -2,10 +2,7 @@ package com.connorcode;
 
 import com.connorcode.chat.ChatComponent;
 import com.connorcode.chat.Response;
-import com.connorcode.chat.components.Egg;
-import com.connorcode.chat.components.Exit;
-import com.connorcode.chat.components.Greeting;
-import com.connorcode.chat.components.Pet;
+import com.connorcode.chat.components.*;
 import com.connorcode.state.StateMachine;
 
 import java.util.Locale;
@@ -17,7 +14,8 @@ public class ChatManager {
             new Egg(),
             new Pet(),
             new Greeting(),
-            new Exit()
+            new Exit(),
+            new WhatIKnow()
     };
 
     public static Response run(String input) {

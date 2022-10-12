@@ -1,6 +1,6 @@
 package com.connorcode;
 
-import com.connorcode.misc.Response;
+import com.connorcode.chat.Response;
 
 import java.util.Scanner;
 

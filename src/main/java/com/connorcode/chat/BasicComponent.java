@@ -1,4 +1,6 @@
-package com.connorcode.misc;
+package com.connorcode.chat;
+
+import com.connorcode.Common;
 
 import java.util.List;
 
@@ -8,7 +10,7 @@ public abstract class BasicComponent implements ChatComponent {
     @Override
     public double scoreText(String input) {
         double out = 0.0;
-        List<String> words = List.of(input.split(" "));
+        List<String> words = List.of(input.split(Common.wordSplit));
 
 
         for (KeyWord i : keyWords) {

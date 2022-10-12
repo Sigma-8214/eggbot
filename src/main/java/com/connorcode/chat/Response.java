@@ -1,4 +1,4 @@
-package com.connorcode.misc;
+package com.connorcode.chat;
 
 public class Response {
     public ResponseType type;

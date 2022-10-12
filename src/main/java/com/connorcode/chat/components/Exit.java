@@ -1,7 +1,7 @@
-package com.connorcode.components;
+package com.connorcode.chat.components;
 
-import com.connorcode.misc.BasicComponent;
-import com.connorcode.misc.Response;
+import com.connorcode.chat.BasicComponent;
+import com.connorcode.chat.Response;
 
 public class Exit extends BasicComponent {
     public Exit() {

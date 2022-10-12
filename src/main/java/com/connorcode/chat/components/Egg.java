@@ -1,7 +1,8 @@
-package com.connorcode.components;
+package com.connorcode.chat.components;
 
-import com.connorcode.misc.ChatComponent;
-import com.connorcode.misc.Response;
+import com.connorcode.Common;
+import com.connorcode.chat.ChatComponent;
+import com.connorcode.chat.Response;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ public class Egg implements ChatComponent {
 
     @Override
     public double scoreText(String input) {
-        String[] words = input.split(" ");
+        String[] words = input.split(Common.wordSplit);
 
         for (String i : words) {
             if (i.contains("ex") && !i.endsWith("ex"))
@@ -24,7 +25,7 @@ public class Egg implements ChatComponent {
 
     @Override
     public Response process(String input) {
-        String[] words = input.split(" ");
+        String[] words = input.split(Common.wordSplit);
         List<String> opportunities = new ArrayList<>();
 
         for (String i : words) {

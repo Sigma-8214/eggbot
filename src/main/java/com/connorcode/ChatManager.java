@@ -1,11 +1,12 @@
 package com.connorcode;
 
-import com.connorcode.components.Egg;
-import com.connorcode.components.Exit;
-import com.connorcode.components.Greeting;
-import com.connorcode.components.Pet;
-import com.connorcode.misc.ChatComponent;
-import com.connorcode.misc.Response;
+import com.connorcode.chat.ChatComponent;
+import com.connorcode.chat.Response;
+import com.connorcode.chat.components.Egg;
+import com.connorcode.chat.components.Exit;
+import com.connorcode.chat.components.Greeting;
+import com.connorcode.chat.components.Pet;
+import com.connorcode.state.StateMachine;
 
 import java.util.Locale;
 import java.util.Random;
@@ -20,6 +21,7 @@ public class ChatManager {
     };
 
     public static Response run(String input) {
+        StateMachine.scrape(input);
         input = input.toLowerCase(Locale.ROOT);
         double maxScore = Double.MIN_VALUE;
         ChatComponent cmp = null;

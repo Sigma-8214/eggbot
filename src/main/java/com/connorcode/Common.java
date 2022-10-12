@@ -1,8 +1,10 @@
-package com.connorcode.misc;
+package com.connorcode;
 
 import java.util.HashMap;
 
 public class Common {
+    public static final String wordSplit = "(?:(?<=^|[^a-zA-Z])'|'(?=[^a-zA-Z]|$)|[^a-zA-Z'])+";
+
     // DICE COEFFICIENT
     public static double diceCoefficient(String rawA, String rawB) {
         String a = rawA.replace(" ", "");
